@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-// Project is a struct that contains information about a projec.
+// Project is a struct that contains information about a project.
 type Project struct {
 	dir   string
 	files []string
@@ -20,6 +20,7 @@ type Project struct {
 // ParseArgument parses project path from command line.
 func (p *Project) ParseArgument() {
 	// TODO Recursive scan option
+	// TODO Validate input
 	flag.StringVar(&p.dir, "dir", "", "Directory to scan")
 	flag.Parse()
 }
