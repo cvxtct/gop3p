@@ -1,3 +1,5 @@
+[![Go](https://github.com/cvxtct/gop3p/actions/workflows/go.yml/badge.svg)](https://github.com/cvxtct/gop3p/actions/workflows/go.yml)
+
 # GOP3P
 
 **The useless project to keep my gappy Go in shape.**
