@@ -4,6 +4,7 @@ package main
 import (
 	"bufio"
 	"flag"
+	"fmt"
 	"io/fs"
 	"io/ioutil"
 	"log"
@@ -17,12 +18,22 @@ type Project struct {
 	files []string
 }
 
+var buildstamp string
+var githash string
+
 // ParseArgument parses project path from command line.
 func (p *Project) ParseArgument() {
+	var pinfo bool
 	// TODO Recursive scan option
 	// TODO Validate input
 	flag.StringVar(&p.dir, "dir", "", "Directory to scan")
+	flag.BoolVar(&pinfo, "version", false, "Program info")
 	flag.Parse()
+
+	if pinfo {
+		fmt.Println("Version: " + "gop3p" + "-" + githash + " | BuildDate: " + buildstamp)
+		os.Exit(0)
+	}
 }
 
 // ParseFiles parses a directory.
